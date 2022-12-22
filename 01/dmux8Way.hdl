@@ -1,0 +1,12 @@
+CHIP dmux8Way{
+	IN in, sel[3];
+	OUT a, b, c, d, e, f, g, h;
+
+	PARTS:
+	dmux4Way(in=in,sel=sel[0..1],a=tmp1,b=tmp2,c=tmp3,d=tmp4);
+	dmux(in=tmp1,sel=sel[2],a=a,b=e);
+	dmux(in=tmp2,sel=sel[2],a=b,b=f);
+	dmux(in=tmp3,sel=sel[2],a=c,b=g);
+	dmux(in=tmp4,sel=sel[2],a=d,b=h);
+	
+}

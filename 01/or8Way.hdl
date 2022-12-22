@@ -1,0 +1,13 @@
+CHIP or8Way{
+	IN in[8];
+	OUT out;
+	
+	PARTS:
+	or(a=in[0],b=in[1],out=tmp1);
+	or(a=tmp1,b=in[2],out=tmp2);
+	or(a=tmp2,b=in[3],out=tmp3);
+	or(a=tmp3,b=in[4],out=tmp4);
+	or(a=tmp4,b=in[5],out=tmp5);
+	or(a=tmp5,b=in[6],out=tmp6);
+	or(a=tmp6,b=in[7],out=out);
+}
